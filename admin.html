@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NexaServe — Admin View</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+  <div class="topnav">
+    <div class="brand">NexaServe Admin</div>
+    <a href="index.html" class="nav-link">← Worker Signup</a>
+    <a href="worker.html" class="nav-link" style="margin-left:16px;">Worker Portal</a>
+    <a href="customer.html" class="nav-link" style="margin-left:16px;">Customer Booking →</a>
+  </div>
+
+  <div class="card wide">
+    <h1>Service Rates</h1>
+    <p class="lede">Set the fixed federation rate for each service. Customers see these prices the moment you save.</p>
+
+    <div id="ratesList">
+      <p class="hint">Loading rates...</p>
+    </div>
+
+    <button id="saveRatesBtn" class="primary-btn" style="max-width:220px;">Save rates</button>
+    <p id="ratesStatus"></p>
+  </div>
+
+  <div class="card wide" style="margin-top:20px;">
+    <h1>Worker Verification</h1>
+    <p class="lede">Workers registered by anyone on the team will show up here live, straight from Firestore. Rejected workers are hidden from this list automatically.</p>
+
+    <div id="workerList">
+      <p class="hint">Loading workers...</p>
+    </div>
+
+    <button id="refreshBtn" class="secondary-btn">↻ Refresh workers</button>
+  </div>
+
+  <div class="card wide" style="margin-top:20px;">
+    <h1>Bookings Overview</h1>
+    <p class="lede">Live bookings made by customers — emergency and scheduled — read-only.</p>
+
+    <div id="bookingList">
+      <p class="hint">Loading bookings...</p>
+    </div>
+
+    <button id="refreshBookingsBtn" class="secondary-btn">↻ Refresh bookings</button>
+  </div>
+</div>
+
+<script type="module" src="admin.js"></script>
+</body>
+</html>

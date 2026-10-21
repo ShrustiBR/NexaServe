@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NexaServe — Worker Signup</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+  <div class="topnav">
+    <div class="brand">NexaServe</div>
+    <a href="worker.html" class="nav-link">My Jobs</a>
+    <a href="admin.html" class="nav-link" style="margin-left:16px;">Go to Admin View →</a>
+  </div>
+
+  <div class="card">
+    <h1>Worker Signup</h1>
+    <p class="lede">Register your skills to start receiving jobs from the cooperative.</p>
+
+    <form id="signupForm">
+      <label>Full name</label>
+      <input type="text" id="name" placeholder="e.g. Ravi Kumar" required>
+
+      <label>Phone number</label>
+      <input type="tel" id="phone" placeholder="e.g. 9845012345" required>
+
+      <label>Skill</label>
+      <select id="skill">
+        <option>Plumbing</option>
+        <option>Electrical</option>
+        <option>Cleaning</option>
+        <option>Carpentry</option>
+        <option>Painting</option>
+        <option>Caregiving</option>
+        <option>Pest Control</option>
+        <option>Appliance Repair</option>
+        <option>AC Repair</option>
+        <option>Gardening</option>
+        <option>Home Tutoring</option>
+        <option>Packers &amp; Movers</option>
+        <option>Salon at Home</option>
+        <option>Cooking &amp; Catering</option>
+      </select>
+
+      <label>Service area</label>
+      <select id="area">
+        <option>Whitefield</option>
+        <option>Koramangala</option>
+        <option>HSR Layout</option>
+        <option>Jayanagar</option>
+        <option>Indiranagar</option>
+        <option>Marathahalli</option>
+        <option>Electronic City</option>
+        <option>BTM Layout</option>
+        <option>Malleswaram</option>
+        <option>Rajajinagar</option>
+        <option>Yelahanka</option>
+        <option>JP Nagar</option>
+        <option>Banashankari</option>
+        <option>Hebbal</option>
+        <option>Sarjapur Road</option>
+        <option>Bellandur</option>
+      </select>
+
+      <label>Upload ID / Certificate</label>
+      <input type="file" id="idFile" accept="image/*,.pdf">
+      <p class="hint">JPG, PNG, or PDF · under 1MB</p>
+
+      <button type="submit" id="submitBtn">Register</button>
+    </form>
+
+    <p id="status"></p>
+  </div>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

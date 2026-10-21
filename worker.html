@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NexaServe — My Jobs</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+  <div class="topnav">
+    <div class="brand">NexaServe</div>
+    <a href="index.html" class="nav-link">← Worker Signup</a>
+    <a href="admin.html" class="nav-link" style="margin-left:16px;">Admin View →</a>
+  </div>
+
+  <!-- LOOKUP STEP -->
+  <div class="card" id="lookupStep">
+    <h1>My Jobs</h1>
+    <p class="lede">Enter the phone number you registered with to see your verification status and assigned bookings.</p>
+
+    <form id="lookupForm">
+      <label>Phone number</label>
+      <input type="tel" id="lookupPhone" placeholder="e.g. 9845012345" required>
+      <button type="submit" id="lookupBtn">View my jobs</button>
+    </form>
+    <p id="lookupStatus"></p>
+  </div>
+
+  <!-- JOBS STEP -->
+  <div class="card wide" id="jobsStep" style="display:none;">
+    <h1>Welcome back</h1>
+    <p class="lede">Here's your verification status and every job assigned to you.</p>
+
+    <div class="profile-card" id="profileCard"></div>
+
+    <label style="margin-top:26px;">Assigned bookings</label>
+    <div id="myBookingList">
+      <p class="hint">Loading your bookings...</p>
+    </div>
+
+    <button id="refreshJobsBtn" class="secondary-btn">↻ Refresh</button>
+    <button id="switchWorkerBtn" class="secondary-btn" style="margin-left:8px;">Not you? Switch number</button>
+  </div>
+</div>
+
+<script type="module" src="worker.js"></script>
+</body>
+</html>

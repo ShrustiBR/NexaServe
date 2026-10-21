@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NexaServe — Book a Service</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+  <div class="topnav">
+    <div class="brand">NexaServe</div>
+    <a href="worker.html" class="nav-link">Worker Login</a>
+    <a href="admin.html" class="nav-link" style="margin-left:16px;">Admin View →</a>
+  </div>
+
+  <!-- STEP 1: REQUEST FORM -->
+  <div class="card" id="requestStep">
+    <h1>Book a Service</h1>
+    <p class="lede">Tell us what you need — we'll match you with verified cooperative workers.</p>
+
+    <form id="requestForm">
+      <label>Your name</label>
+      <input type="text" id="custName" placeholder="e.g. Priya S." required>
+
+      <label>Service</label>
+      <select id="service">
+        <option>Plumbing</option>
+        <option>Electrical</option>
+        <option>Cleaning</option>
+        <option>Carpentry</option>
+        <option>Painting</option>
+        <option>Caregiving</option>
+        <option>Pest Control</option>
+        <option>Appliance Repair</option>
+        <option>AC Repair</option>
+        <option>Gardening</option>
+        <option>Home Tutoring</option>
+        <option>Packers &amp; Movers</option>
+        <option>Salon at Home</option>
+        <option>Cooking &amp; Catering</option>
+      </select>
+
+      <label>Your area</label>
+      <select id="area">
+        <option>Whitefield</option>
+        <option>Koramangala</option>
+        <option>HSR Layout</option>
+        <option>Jayanagar</option>
+        <option>Indiranagar</option>
+        <option>Marathahalli</option>
+        <option>Electronic City</option>
+        <option>BTM Layout</option>
+        <option>Malleswaram</option>
+        <option>Rajajinagar</option>
+        <option>Yelahanka</option>
+        <option>JP Nagar</option>
+        <option>Banashankari</option>
+        <option>Hebbal</option>
+        <option>Sarjapur Road</option>
+        <option>Bellandur</option>
+      </select>
+
+      <label>When do you need this?</label>
+      <div class="toggle-group">
+        <label class="toggle-option">
+          <input type="radio" name="bookingType" value="emergency" checked>
+          <span class="toggle-card">⚡ Emergency</span>
+        </label>
+        <label class="toggle-option">
+          <input type="radio" name="bookingType" value="scheduled">
+          <span class="toggle-card">📅 Scheduled</span>
+        </label>
+      </div>
+
+      <div id="scheduleFields" style="display:none;">
+        <div class="sched-row">
+          <div>
+            <label style="margin-top:12px;">Date</label>
+            <input type="date" id="schedDate">
+          </div>
+          <div>
+            <label style="margin-top:12px;">Time</label>
+            <input type="time" id="schedTime">
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" id="findBtn">Find my match →</button>
+    </form>
+    <p id="matchStatus"></p>
+  </div>
+
+  <!-- STEP 2: MATCH RESULTS (hidden until matches are found) -->
+  <div class="card" id="matchStep" style="display:none;">
+    <h1>Workers available for you</h1>
+    <p class="lede">Your closest match is highlighted — or pick any other verified worker below.</p>
+
+    <div id="matchList"></div>
+  </div>
+
+  <!-- STEP 3: BOOKING CONFIRMED / FAKE PAYMENT -->
+  <div class="card" id="confirmStep" style="display:none;">
+    <h1>Booking confirmed ✓</h1>
+    <p class="lede" id="confirmLede">Your worker has been assigned. Payment happens after the job is completed.</p>
+
+    <div class="progress-track">
+      <div class="progress-fill"></div>
+    </div>
+    <p class="hint">Assigned → En route → Working → Done</p>
+
+    <label>Invoice</label>
+    <div class="invoice">
+      <div class="invoice-row">
+        <span class="soft">Service charge</span><span style="font-weight:600;" id="serviceAmt">₹300</span>
+      </div>
+      <div class="invoice-row total">
+        <span>Total</span><span id="totalAmt">₹300</span>
+      </div>
+    </div>
+
+    <button id="payBtn">Pay Now</button>
+    <p id="payStatus"></p>
+
+    <div id="ratingSection" style="display:none;">
+      <label>Rate your worker</label>
+      <div class="star-rating" id="starRating">
+        <button type="button" class="star-btn" data-value="1">★</button>
+        <button type="button" class="star-btn" data-value="2">★</button>
+        <button type="button" class="star-btn" data-value="3">★</button>
+        <button type="button" class="star-btn" data-value="4">★</button>
+        <button type="button" class="star-btn" data-value="5">★</button>
+      </div>
+      <p id="ratingStatus"></p>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="customer.js"></script>
+</body>
+</html>
