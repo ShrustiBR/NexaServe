@@ -1,6 +1,13 @@
 # NexaServe — Cooperative Gig Services (Worker Signup + Admin + Customer Booking)
 
-A working template using plain HTML/CSS/JS + Firebase. No React, no build tools.
+## 🔗 Live Demo
+**Try it here:** https://candid-pasca-96ea29.netlify.app/
+
+- Worker Signup: `/index.html`
+- Customer Booking: `/customer.html`
+- Admin Panel: `/admin.html`
+
+A working template using plain HTML/CSS/JS + Firebase.
 
 ## What's new in this version
 - **Ratings**: after a customer pays, a 5-star rating widget appears. It updates the booking (`rating`) and recalculates the worker's `avgRating`/`ratingCount`, which now feeds the "highly matched worker" ranking on the booking page.
